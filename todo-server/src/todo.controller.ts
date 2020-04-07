@@ -1,11 +1,11 @@
-import { TodoModel } from './todo.model'
+import { TodoModel, ITodo } from './todo.model'
 import {Controller, Route, Get, Post, BodyProp, Put, Delete} from 'tsoa';
 
 @Route('/todo')
 export class TodoController extends Controller {
 
     @Get()
-    public async getAll(): Promise<any[]> {
+    public async getAll(): Promise<ITodo[]> {
         try {
             let items: any = await TodoModel.find({});
             items = items.map((item) => {return {id: item._id, description: item.description}});

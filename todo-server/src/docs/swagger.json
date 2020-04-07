@@ -3,7 +3,24 @@
 	"consumes": [
 		"application/json"
 	],
-	"definitions": {},
+	"definitions": {
+		"ITodo": {
+			"properties": {
+				"_id": {
+					"type": "string"
+				},
+				"description": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"_id",
+				"description"
+			],
+			"type": "object",
+			"additionalProperties": true
+		}
+	},
 	"info": {
 		"title": "todo-server",
 		"version": "1.0.0",
@@ -24,8 +41,7 @@
 						"description": "Ok",
 						"schema": {
 							"items": {
-								"additionalProperties": true,
-								"type": "object"
+								"$ref": "#/definitions/ITodo"
 							},
 							"type": "array"
 						}
