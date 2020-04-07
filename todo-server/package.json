@@ -1,10 +1,11 @@
 {
   "name": "todo-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "A little Typescript test project",
   "main": "src/main.ts",
   "scripts": {
-    "start": "nodemon -x ts-node src/main.ts"
+    "start": "nodemon -x ts-node src/main.ts",
+    "generate": "tsoa routes && tsoa swagger"
   },
   "author": "tboehle",
   "license": "ISC",
@@ -14,7 +15,9 @@
     "express": "^4.17.1",
     "mongodb": "^3.5.5",
     "mongoose": "^5.9.7",
+    "swagger-ui-express": "^4.1.4",
     "ts-node": "^8.8.2",
+    "tsoa": "^2.5.13",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
